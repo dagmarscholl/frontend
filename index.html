@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+	<title>Kamele zählen</title>
+</head>
+<body>
+
+	<div class="box" id="box">
+		<div class="header"></div>
+		<div class="group">
+			<form oninput="x.value=parseInt(a.value)"> 
+				<h2>Wähle dein Alter</h2> 
+				<input type="range" id="a" value="50"> 
+				<output name="x" for="a">50</output> 
+			</form>
+		</div>
+		
+		<form name="farben">
+		<div class="cssSlider group">
+		 	<h2>Wähle deine Lieblingsfarbe:</h2>
+		    <!-- die inputs um den Slider zu Steuern -->
+		    <input name="slider" id="slide01" type="radio" value="1" checked="checked" />
+		    <input name="slider" id="slide02" type="radio" value="2" />
+		    <input name="slider" id="slide03" type="radio" value="3" />
+		    <input name="slider" id="slide04" type="radio" value="4" />
+	
+		    <!-- Eine Steuerung -->
+		    <ul class="sliderControls">
+		        <li><label for="slide01">1</label></li>
+		        <li><label for="slide02">2</label></li>
+		        <li><label for="slide03">3</label></li>
+		        <li><label for="slide04">4</label></li>
+		    </ul>
+		</div>
+		<div class="myButton group">
+			<button onClick="javascript:berechnen();">Berechnen</button>
+		</div>
+		</form>
+	</div>	
+	
+	<script type="text/javascript">
+		function berechnen() {
+			var alter = document.getElementById('a').value;
+			var farben = document.getElementsByName('slider');
+			var farbe;
+		
+			for (var i=0; i<farben.length; i++) {
+				if(farben[i].checked){
+			        farbe = farben[i].value;
+			    }
+			}
+			
+			var ergebnis = Math.round(Math.sqrt(alter) * farbe);
+			document.getElementById('box').innerHTML = "<div class='header'></div><div class='group'><h2> Du bist </h2><h1>"
+			+ ergebnis + "</h1><h2>Kamele wert.</h2></div>";
+		}
+	</script>
+</body>
+</html>

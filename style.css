@@ -1,0 +1,202 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	font-family: Verdana, 'Arial Black', serif;
+}
+
+output {
+	border:1px solid #2f4f4f;
+	border-radius:10%;
+	background: #696969;
+	padding:10px;	
+}
+
+.header {
+	background-image: url(bg.jpg);
+	background-size: 100% 100%;
+	min-height:75px;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+
+.box {
+	width:90%;
+	padding:0 0 5px 0;
+	margin: 0 auto;
+	border:1px solid #2f4f4f;
+	box-shadow:10px 10px 100px #a9a9a9;
+}
+.group {
+	text-align: center;
+}
+.slider {
+    overflow-x: hidden;
+    /* width: 1000px; bei Bedarf anpassen, da hier 100% gewünscht sind, kann man die Angabe einsparen */
+}
+ 
+.cssSlider {
+    overflow-x: hidden;
+}
+
+#slide02:checked {
+    left: -100%;
+}
+ 
+#slide03:checked {
+    left: -200%;
+}
+ 
+#slide04:checked {
+    left: -300%;
+}
+ 
+.cssSlider input {
+    position: absolute;
+    left: -99999px;
+}
+ 
+.sliderControls li {
+    display: inline-block;
+}
+ 
+/* Controls auf einheitliche Maße bringen und die Ecken abrunden */
+.sliderControls label {
+    width: 50px;
+    height: 30px;
+    padding:5px;
+    line-height: 20px;
+    display: block;
+    cursor: pointer;
+    border-radius:10%;
+    color: #000;
+}
+
+#slide01 ~ .sliderControls label[for="slide01"] {
+	background: #006;
+}
+#slide02 ~ .sliderControls label[for="slide02"] {
+	background: #060;
+}
+#slide03 ~ .sliderControls label[for="slide03"] {
+	background: #900;
+}
+#slide04 ~ .sliderControls label[for="slide04"] {
+	background: #fc0;
+}
+ 
+#slide01:checked ~ .sliderControls label[for="slide01"] {
+	background: #003;
+	border: 1px solid #000080;
+}
+#slide02:checked ~ .sliderControls label[for="slide02"] {
+	background: #030;
+	border: 1px solid #006400;
+}
+#slide03:checked ~ .sliderControls label[for="slide03"] {
+	background: #600;
+	border: 1px solid #8b0000;
+}
+#slide04:checked ~ .sliderControls label[for="slide04"] {
+    background: #fc0;
+    border: 1px solid #ffff00;
+}
+
+#slide01:hover ~ .sliderControls label[for="slide01"] {
+	background: #06C;
+}
+#slide02:hover ~ .sliderControls label[for="slide02"] {
+	background: #390;
+}
+#slide03:hover ~ .sliderControls label[for="slide03"] {
+	background: #c00;
+}
+#slide04:hover ~ .sliderControls label[for="slide04"] {
+	background: #ff6;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 30%;
+  margin: 0 auto;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #808080;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #808080;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -14px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #82b2dc;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: ##808080;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #808080;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #132c42;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #808080;
+  cursor: pointer;
+  height: 8.4px;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #82b2dc;
+}
